@@ -1,0 +1,18 @@
+.labels {
+  text-align: right;
+  top: 65px;
+  left: 45px;
+  position: absolute;
+  &-label {
+    margin-bottom: 15px;
+    height: 25px;
+    &-required {
+      font-size: 18px;
+      color: #ff587a;
+    }
+    &-avto {
+      margin-top: 21px;
+      height: 25px;
+    }
+  }
+}

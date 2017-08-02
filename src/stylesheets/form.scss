@@ -1,0 +1,93 @@
+.form {
+  font-family: "Webdings", sans-serif;
+  font-size: 18px;
+  max-width: 600px;
+  min-width: 200px;
+  min-height: 530px;
+  margin: auto;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  background: #f0efff;
+  position: relative;
+    &-header {
+    background: #3aa2ff;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    border-radius: 2px;
+    border: 1px solid #3aa2ff;
+    text-align: center;
+    color: white;
+  }
+  &-button {
+    font-size: 15px;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    padding: 5px;
+    color: #ffffff;
+    border-radius: 4px;
+    background: #3aa2ff;
+    height: 20px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    &:hover {
+      background: #40c0ff;
+    }
+    &:active {
+      background: #3aa2ff;
+    }
+  }
+  &-info {
+    font-size: 15px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+  }
+  &-error {
+    font-size: 10px;
+    opacity: 0.8;
+    &-firstName {
+      border: 1px solid #dddddd;
+      border-radius: 6px;
+      background: #ff94b3;
+      width: 200px;
+      position: absolute;
+      right: 50px;
+      top: 92px;
+      padding: 3px;
+      z-index: 1;
+      &:after {
+        content: '';
+        position: absolute;
+        background: #ff94b3;
+        left: 15px;
+        top: -5px;
+        width: 8px;
+        height: 9px;
+        z-index: 1;
+        transform: rotate(45deg);
+      };
+    }
+    &-lastName {
+      @extend .form-error-firstName;
+      top: 132px;
+    }
+    &-patronymic {
+      @extend .form-error-lastName;
+      top: 172px;
+
+    }
+    &-date {
+      @extend .form-error-patronymic;
+      top: 212px;
+    }
+    &-passport {
+      @extend .form-error-patronymic;
+      top: 292px;
+    }
+  }
+}

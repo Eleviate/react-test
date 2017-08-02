@@ -1,0 +1,31 @@
+.fields {
+  width: 200px;
+  position: absolute;
+  right: 110px;
+  top: 65px;
+  &-input {
+    margin-bottom: 15px;
+    width: 100%;
+    padding-left: 5px;
+    height: 25px;
+    border-radius: 4px;
+    border: 1px #dddddd;
+    &-error {
+      @extend .fields-input;
+      border: 2px solid red;
+      outline:none;
+      &:focus {
+        border: 2px solid red;
+      }
+    }
+  }
+  &-date {
+    @extend .fields-input;
+    padding-left: 50px;
+  }
+  &-select {
+    margin-bottom: 15px;
+    height: 25px;
+    width: 100%;
+  }
+}
