@@ -1,29 +1,20 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import TransportList from './TransportList';
-import MarkList from './MarkList';
+import TransportList from '../views/CarsList';
+import MarkList from '../views/MarksList';
 
 class Transport extends Component {
     constructor(props) {
         super(props);
     }
+
     render() {
+        const {onGetCars, onGetMarks, marks, cars} = this.props;
         return (
             <div>
-                <input type="checkbox"
-                       value="false"
-                       onChange={this.props.onGetCars.bind(this)}
-                className="fields-input"/>
-                {
-                    this.props.cars && this.props.cars.length
-                        ? <TransportList cars={this.props.cars} getMarks={this.props.onGetMarks}/>
-                        : ''
-                }
-                {
-                    this.props.marks && this.props.marks.length
-                        ? <MarkList marks={this.props.marks}/>
-                        : ''
-                }
+                <input type="checkbox" value="false" onChange={onGetCars} className="fields-input"/>
+                {cars && cars.length ? <TransportList cars={cars} getMarks={onGetMarks}/> : ''}
+                {marks && marks.length ? <MarkList marks={marks}/> : ''}
             </div>
         );
     }

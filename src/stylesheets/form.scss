@@ -9,6 +9,11 @@
   border-bottom-right-radius: 8px;
   background: #f0efff;
   position: relative;
+  &-simulate {
+    @extend .form;
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
     &-header {
     background: #3aa2ff;
     height: 50px;
@@ -85,9 +90,18 @@
       @extend .form-error-patronymic;
       top: 212px;
     }
+    &-gender {
+      @extend .form-error-date;
+      top: 252px;
+    }
     &-passport {
-      @extend .form-error-patronymic;
+      @extend .form-error-gender;
       top: 292px;
     }
+    &-email {
+      @extend .form-error-passport;
+      top: 332px;
+    }
+
   }
 }

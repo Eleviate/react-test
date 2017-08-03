@@ -6,11 +6,12 @@ export default class MarkList extends Component {
     }
 
     render() {
+        const {marks} = this.props;
         return (
             <select className="fields-select">
                 <option>Выберите марку</option>
                 {
-                    this.props.marks.map((mark, index) => {
+                    marks.map((mark, index) => {
                         return <option key={index}>{mark}</option>
                     })
                 }

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 export default class TransportList extends Component {
     constructor(props) {
@@ -6,11 +6,12 @@ export default class TransportList extends Component {
     }
 
     render() {
+        const {cars, getMarks} = this.props;
         return (
-            <select onChange={this.props.getMarks} className="fields-select">
+            <select onChange={getMarks} className="fields-select">
                 <option>Выберите модель</option>
                 {
-                    this.props.cars.map((car, index) => {
+                    cars.map((car, index) => {
                         return <option key={index}>{car}</option>
                     })
                 }
